@@ -14,13 +14,14 @@ public class Principal41N2 {
 
 	public static Matcher<String> length(Matcher<Integer> matcher) {
 	    return new FeatureMatcher<String, Integer>(matcher,
-	            "a String of length that", "length") {
+	            "longitud de una cadena de texto", "length") {
 	        @Override
 	        protected Integer featureValueOf(String actual) {
 	            return actual.length();
 	        }
 	    };
 	}
+	
 	@Test
 	public void testNumberCharOfString() {
 	    assertThat("Mordor", length(is(8)));
